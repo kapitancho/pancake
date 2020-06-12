@@ -2,12 +2,11 @@
 
 namespace MaBaker\Main;
 
-use MaBaker\App\Adapter\MasterPancakeMaker;
+use MaBaker\App\UseCase\MasterPancakeMaker;
 use MaBaker\App\Port\PancakeMaker;
-use MaBaker\Infrastructure\Adapter\CoolMixDispenser;
-use MaBaker\Infrastructure\Adapter\TeflonPan;
-use MaBaker\Infrastructure\Service\CliPancakeService;
-use MaBaker\Infrastructure\Service\WebPancakeService;
+use MaBaker\Infrastructure\Adapter\{
+	CoolMixDispenser, TeflonPan, CliPancakeService, WebPancakeService
+};
 
 /**
  * Class Config

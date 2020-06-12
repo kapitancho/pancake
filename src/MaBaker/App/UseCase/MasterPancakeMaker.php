@@ -1,6 +1,6 @@
 <?php
 
-namespace MaBaker\App\Adapter;
+namespace MaBaker\App\UseCase;
 
 use MaBaker\App\Port\PancakeMaker;
 use MaBaker\App\Port\PancakeMixDispenser;

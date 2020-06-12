@@ -1,14 +1,14 @@
 <?php
 
-namespace MaBaker\Infrastructure\Service;
+namespace MaBaker\Infrastructure\Adapter;
 
 use MaBaker\App\Port\PancakeMaker;
 
 /**
- * Class CliPancakeService
+ * Class WebPancakeService
  * @package MaBaker\Infrastructure\Service
  */
-final class CliPancakeService {
+final class WebPancakeService {
 	/**
 	 * @var PancakeMaker
 	 */
@@ -24,13 +24,13 @@ final class CliPancakeService {
 
 	/**
 	 * Simplified
-	 * @param array $argv
+	 * @param array $getData
 	 */
-	public function handle(array $argv): void {
+	public function handle(array $getData): void {
 		try {
-			$amount = (int)($argv[1] ?? 1);
+			$amount = (int)($getData['amount'] ?? 1);
 			$plate = $this->pancakeMaker->giveMePancakes($amount);
-			echo "Your plate is ready. Total number of pancakes: ", count($plate);
+			echo "Your plate is ready. Total number of pancakes: ", count($plate->getAllPancakes());
 		} catch (\Exception $ex) {
 			echo "ERROR: ", $ex->getMessage();
 		}
